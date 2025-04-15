@@ -1,0 +1,66 @@
+# Create a Page
+
+*强调*  (示例：斜体)  
+ _强调_  (示例：斜体)  
+
+**加重强调**  (示例：粗体)  
+ __加重强调__ (示例：粗体)  
+
+
+表头  | 表头  | 表头
+ ---- | ----- | ------  
+ 单元格内容  | 单元格内容 | 单元格内容 
+ 单元格内容  | 单元格内容 | 单元格内容   
+
+ ![图片名称](https://www.baidu.com/img/bd_logo1.png)  
+
+
+
+6. 链接。
+添加链接并给链接添加替换文本，格式如下： 
+[替换文本](https://www.baidu.com/)    
+
+
+
+7. 无序列表  
+格式：在每隔条目之前添加“*”号，“*”与正文之间需要有空格。在显示时，“*”会变为黑点。
+
+多级圆点列表：就是在“*”之前多加一个Tab。
+
+示例：
+* 1. 项目1  
+* 2. 项目2  
+* 3. 项目3  
+
+
+8.块引用有多级结构
+> 数据结构
+>> 树
+>>> 二叉树
+>>>> 平衡二叉树
+>>>>> 满二叉树
+
+
+```jsx title="src/pages/my-react-page.js"
+import React from 'react';
+import Layout from '@theme/Layout';
+
+export default function MyReactPage() {
+  return (
+    <Layout>
+      <h1>My React page</h1>
+      <p>This is a React page</p>
+    </Layout>
+  );
+}
+```
+
+
+import Highlight from '@site/src/components/Highlight';
+
+<Highlight color="#25c2a0">Docusaurus green</Highlight>
+
+
+import HelloReact from '@site/src/pages/helloReact.js';
+
+<HelloReact color="#25c2a0">Docusaurus green</HelloReact>
