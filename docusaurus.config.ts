@@ -1,11 +1,22 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
-
+import  path from 'path';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-
+  plugins: [
+     'docusaurus-plugin-sass',
+    path.resolve(__dirname, './webpack/webpack.config.js'),
+  ],
+  // // ...其他配置
+  // webpack: {
+  //   alias: {
+  //     '@': path.resolve(__dirname, '/src'),
+  //     'src': path.resolve(__dirname, '/src'),
+  //     // 添加更多别名...
+  //   },
+  // },
  
   title: '深圳以凡公司ui组件库',
   // tagline: '深圳以凡公司ui组件库文档',
@@ -37,34 +48,50 @@ const config: Config = {
   },
 
   presets: [
+
+    // [
+    //   '@docusaurus/babel/preset',
+    //   {
+    //     // ...其他配置
+    //     babel: {
+    //       plugins: [
+    //         ['@babel/plugin-proposal-decorators', { legacy: true }], // 启用旧版装饰器语法:ml-citation{ref="4" data="citationList"}
+    //         ['@babel/plugin-proposal-class-properties', { loose: true }]
+    //       ],
+    //     },
+    //   },
+    // ],
+
     [
       'classic',
       {
-        docs: {
-          sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-        },
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-          // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
-        },
+        
+        // docs: {
+        //   sidebarPath: './sidebars.ts',
+        //   // Please change this to your repo.
+        //   // Remove this to remove the "edit this page" links.
+        //   editUrl:
+        //     'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+        // },
+        // blog: {
+        //   showReadingTime: true,
+        //   feedOptions: {
+        //     type: ['rss', 'atom'],
+        //     xslt: true,
+        //   },
+        //   // Please change this to your repo.
+        //   // Remove this to remove the "edit this page" links.
+        //   editUrl:
+        //     'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+        //   // Useful options to enforce blogging best practices
+        //   onInlineTags: 'warn',
+        //   onInlineAuthors: 'warn',
+        //   onUntruncatedBlogPosts: 'warn',
+        // },
         theme: {
           customCss: './src/css/custom.css',
         },
+        
       } satisfies Preset.Options,
     ],
   ],
