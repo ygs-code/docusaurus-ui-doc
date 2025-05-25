@@ -6,7 +6,7 @@ import dayjs from "dayjs";
 import { tableData } from "@/data";
 
 export default () => {
-  console.log("tableData=", tableData);
+ 
   const [searchParams, setSearchParams] = useState({
     pageNumber: 1,
     pageSize: 10,
@@ -115,7 +115,7 @@ export default () => {
         // 分页改变 或者 table 表格排序改变 回调方法
         onChange={(searchParams: { pageNumber: number; pageSize: number }) => {
           setSearchParams(searchParams);
-          console.log("searchParams==", searchParams);
+ 
           // this.loadTableData(searchParams);
         }}
  

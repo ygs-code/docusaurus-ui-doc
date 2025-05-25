@@ -159,7 +159,7 @@ const Index = (props) => {
 
     const values: SubmitData = await mapSubmitData(formData);
 
-    console.log("values===", values);
+     
  // highlight-start
      //  发送请求到接口
     // const data = await Ajax(values);
