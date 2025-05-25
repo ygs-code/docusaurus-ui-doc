@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import { withTranslation, WithTranslation, useTranslation } from 'react-i18next';
 import { Input, Select, Mentions } from 'antd';
-import { getToken, GetRegionCode } from "@/apis";
+import {   GetRegionCode } from "@/apis";
 import   './index.scss';
 
 

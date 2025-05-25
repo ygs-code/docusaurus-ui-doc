@@ -14,6 +14,7 @@ const Captcha: React.FC<CaptchaProps> = ({ disabled }) => {
   function refreshCaptcha() {
   
     setLoading(true);
+
     genAuthCaptcha()
       .then((res) => {
         console.log(res);
@@ -26,6 +27,7 @@ const Captcha: React.FC<CaptchaProps> = ({ disabled }) => {
       .finally(() => {
         setLoading(false);
       });
+      
   }
 
   return (

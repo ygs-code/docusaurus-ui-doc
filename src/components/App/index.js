@@ -22,7 +22,7 @@ import { token } from "@/apis/request";
 import { I18nextProvider } from "react-i18next";
 import { i18n } from "@/utils";
 import RoutesComponentProvider from "src/router/RoutesComponentProvider.js";
-import { LanguageProvider } from "@/components/Language";
+// import { LanguageProvider } from "@/components/Language";
 import store from "@/redux/Store.js";
 
 // import 'tailwindcss/tailwind.css';
@@ -52,9 +52,10 @@ class Index extends Component {
   来自Provider组件
   */
     return (
-      <Provider store={store}>
-        <I18nextProvider i18n={i18n}>
-          <LanguageProvider>
+      <>  
+      {/* <Provider store={store}> */}
+        {/* <I18nextProvider i18n={i18n}> */}
+          {/* <LanguageProvider> */}
             <ConfigProvider
               theme={{
                 token: {
@@ -71,7 +72,7 @@ class Index extends Component {
                 // },
               }}
             >
-              <RoutesComponentProvider value={routesComponent}>
+              {/* <RoutesComponentProvider value={routesComponent}> */}
                 {/* <Routers
                   level={1}
                   history={history}
@@ -80,11 +81,12 @@ class Index extends Component {
                 {Children.map(children, (child, index) => {
                   return cloneElement(child, this.props);
                 })}
-              </RoutesComponentProvider>
+              {/* </RoutesComponentProvider> */}
             </ConfigProvider>
-          </LanguageProvider>
-        </I18nextProvider>
-      </Provider>
+          {/* </LanguageProvider> */}
+        {/* </I18nextProvider> */}
+      {/* </Provider> */}
+       </>
     );
   }
   componentDidCatch(error, info) {

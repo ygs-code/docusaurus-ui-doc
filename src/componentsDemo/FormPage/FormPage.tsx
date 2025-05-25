@@ -1,24 +1,12 @@
 import "./index.scss";
-// import {
-//   createPermission,
-//   editPermission,
-//   getPermissionInfo,
-//   getPermissionList
-// } from "src/assets/js/request";
+
 import FormPage, {
   FormPageState,
   FormPageProps,
 } from "src/components/FormPage";
-import LazySelect from "src/components/LazySelect";
-import setBreadcrumbAndTitle from "src/components/setBreadcrumbAndTitle";
-import { mapRedux } from "src/redux";
-import { addRouterApi, routePaths } from "src/router";
 
-import {
-  withTranslation,
-  WithTranslation,
-  useTranslation,
-} from "react-i18next";
+
+
 
 // initData:  初始化数据类型
 interface InitData {
@@ -33,7 +21,7 @@ interface InitData {
   toggle: string;
   textarea: string;
 
-  
+
 }
 // SubmitData:  提交表单数据类型
 interface SubmitData {
@@ -110,8 +98,8 @@ class Index extends FormPage<Props, State> {
       textarea,
     } = initData;
 
-   
- 
+
+
 
     return {
       checkbox,
@@ -135,22 +123,22 @@ class Index extends FormPage<Props, State> {
       data: {
         checkbox: '',
         checkboxgroup: '',
-        datepicker:  '',
-        input:  '',
-        radio:  '',
-        radiogroup:  '',
-        rangepicker:  '',
-        select:  '',
+        datepicker: '',
+        input: '',
+        radio: '',
+        radiogroup: '',
+        rangepicker: '',
+        select: '',
         toggle: '',
         textarea: '',
 
       },
-    }; 
-     // highlight-start
+    };
+    // highlight-start
     //  这里可以使用接口请求数据，获取初始化数据
     // const { data }  =  await Ajax(id);
-     // highlight-end
-   
+    // highlight-end
+
 
     return await this.mapInitData(data);
   };
@@ -171,7 +159,7 @@ class Index extends FormPage<Props, State> {
       toggle,
       textarea,
     } = formData;
-    return  formData
+    return formData
   };
   // 提交请求到接口
   onSubmitForm = async (formData: InitData): Promise<any> => {
@@ -183,10 +171,10 @@ class Index extends FormPage<Props, State> {
     } = this.props;
 
     const values: SubmitData = await this.mapSubmitData(formData);
-     // highlight-start
+    // highlight-start
     //  这里提交数据到后台接口  保存或者更新数据
     // const { data }  =  await Ajax(values);
-     // highlight-end
+    // highlight-end
 
     return values;
   };
@@ -376,7 +364,7 @@ class Index extends FormPage<Props, State> {
     ];
   };
 
-  componentDidMount() {}
+  componentDidMount() { }
   // 底部按钮
   // getFooter = () => null;
   /**渲染表单 */
@@ -385,37 +373,4 @@ class Index extends FormPage<Props, State> {
   }
 }
 
-export default withTranslation()(
-  mapRedux()(
-    // 权限控制
-    setBreadcrumbAndTitle((props) => {
-      const { match: { params: { action } = {} } = {} } = props;
-
-      const mapText: { [key: string]: string } = {
-        create: "创建",
-        view: "查看",
-        edit: "编辑",
-        review: "审核",
-      };
-
-      return {
-        //设置面包屑和标题
-        breadcrumb: [
-          {
-            label: "客户审核",
-            path: routePaths.customerReview,
-          },
-          {
-            label: mapText[action] || "",
-          },
-        ],
-
-        title: `客户审核/${mapText[action]}`,
-      };
-    })(
-      Index
-
-      // addRouterApi(Index)
-    )
-  )
-);
+export default Index

@@ -6,10 +6,6 @@ import { InboxOutlined, CameraOutlined, PlusOutlined } from '@ant-design/icons';
 import type { UploadProps } from 'antd';
 import { message, Upload, Spin, Popconfirm } from 'antd';
 import Viewer from 'react-viewer';
-import idCardBack from '@/assets/images/idCardBack.png';
-import idCardFront from '@/assets/images/idCardFront.png';
-import dd from '@/assets/images/404.png';
-import { CheckDataType } from '@/utils';
 import { useTranslation } from 'react-i18next';
 
 
@@ -193,11 +189,6 @@ export default (props: Props) => {
                                         status == 'error' ? <div color='error'>图片上传错误</div> : null
                                     }
                                 </div>
-
-
-
-
-
                                 {status === 'uploading' || status === 'error' ? (
                                     <>
                                         <div className="mask"></div>
