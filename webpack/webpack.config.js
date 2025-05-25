@@ -19,7 +19,7 @@ module.exports = function (context) {
   return {
     name: "webpack",
     // webpack 配置
-    configureWebpack(config) {
+    configureWebpack(config, isServer, utils) {
       // const {
       //   resolve,
       //   module,
@@ -39,6 +39,9 @@ module.exports = function (context) {
           alias: {
             "@": path.resolve(__dirname, "../src"),
             src: path.resolve(__dirname, "../src"),
+
+            // "@": path.resolve(process.cwd(), "/src"),
+            // src: path.resolve(process.cwd(), "/src"),
           },
         },
 

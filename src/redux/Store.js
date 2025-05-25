@@ -17,14 +17,14 @@ export const createStore = (global) => {
   });
 };
 
-let $global = {};
-try {
-  if (window) {
-    $global = window;
-  }
-} catch (error) {
-  //
-  $global = {};
-}
+ let $global = {};
+// try {
+//   if (window) {
+//     $global = window;
+//   }
+// } catch (error) {
+//   //
+//   $global = {};
+// }
 
 export default createStore($global); // (global || {})

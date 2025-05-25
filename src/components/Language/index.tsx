@@ -36,7 +36,7 @@ import {
 import { mapRedux } from '@/redux';
 import { Menu } from 'antd';
 import i18n from 'i18next';
-import { localStorage } from '@/storage';
+// import { localStorage } from '@/storage';
 // import { getLanguage, setLanguage } from '@/utils/i18n';
 const { useToken } = theme;
 

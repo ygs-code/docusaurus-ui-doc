@@ -57,6 +57,7 @@
     "@docusaurus/babel": "^3.7.0",
     "@docusaurus/core": "3.7.0",
     "@docusaurus/preset-classic": "^3.7.0",
+    "@easyops-cn/docusaurus-search-local": "^0.49.2",
     "@htmllinter/basic-config": "^0.5.1",
     "@mdx-js/react": "^3.0.0",
     "@rematch/core": "1.2.0",

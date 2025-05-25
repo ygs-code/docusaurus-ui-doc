@@ -7,7 +7,7 @@ import { emailLogin, emailSendCode } from '@/apis';
 import Token from '@/apis/request/token';
 import { addRouterApi } from 'src/router';
 import { mapRedux } from '@/redux';
-import { getLoginInfo, setLoginInfo } from '@/storage/loginInfo';
+// import { getLoginInfo, setLoginInfo } from '@/storage/loginInfo';
 
 interface LoginProps {
   type: 'email' | 'phone';
@@ -93,20 +93,20 @@ const VerificationCodeLogin: React.FC<LoginProps> = (props) => {
   const onFinish = (values: any) => {
     setLoginLoading(true);
     if (values.isRemember) {
-      setLoginInfo({
-        loginType: type,
-        userId: values.emailOrPhone,
-      });
+      // setLoginInfo({
+      //   loginType: type,
+      //   userId: values.emailOrPhone,
+      // });
     }
     try {
       emailLogin(values.emailCode).then((res) => {
         setLoginLoading(false);
         message.success('登录成功');
         // const { accessMenuList, accessActionList } = res.data;
-        setLoginInfo({
-          loginType: type,
-          userId: values.emailOrPhone,
-        });
+        // setLoginInfo({
+        //   loginType: type,
+        //   userId: values.emailOrPhone,
+        // });
         Token.set(res.data.authorization);
         pushRoute(
           {

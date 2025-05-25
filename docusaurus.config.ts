@@ -8,7 +8,36 @@ const config: Config = {
   plugins: [
      'docusaurus-plugin-sass',
     path.resolve(__dirname, './webpack/webpack.config.js'),
+    // require.resolve('docusaurus-lunr-search'),
+    // require.resolve("@cmfcmf/docusaurus-search-local")
+ 
+
   ],
+
+
+
+themes: [
+    // ... Your other themes.
+    [
+      require.resolve("@easyops-cn/docusaurus-search-local"),
+      /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
+      ({
+        // ... Your options.
+        // `hashed` is recommended as long-term-cache of index file is possible.
+        hashed: true,
+        indexPages: true,
+        indexBlog: true,
+        indexDocs: true,
+
+        // For Docs using Chinese, it is recomended to set:
+        language: ["en", "zh"],
+
+        // If you're using `noIndex: true`, set `forceIgnoreNoIndex` to enable local index:
+        // forceIgnoreNoIndex: true,
+      }),
+    ],
+  ],
+
   // // ...其他配置
   // webpack: {
   //   alias: {
@@ -43,8 +72,8 @@ const config: Config = {
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: 'zh-Hans',
+    locales: ['zh-Hans'],
   },
 
   presets: [
