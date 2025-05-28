@@ -3,7 +3,7 @@
 // };
 
 
-export default {
+module.exports ={
     "compact": true,
     "presets": [
       "@docusaurus/babel/preset",  
