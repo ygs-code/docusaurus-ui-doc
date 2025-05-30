@@ -54,9 +54,12 @@
     "@babel/runtime": "^7.1.2",
     "@commitlint/cli": "^17.0.2",
     "@commitlint/config-conventional": "^17.0.2",
-    "@docusaurus/babel": "^3.7.0",
-    "@docusaurus/core": "3.7.0",
-    "@docusaurus/preset-classic": "^3.7.0",
+    "@docusaurus/babel": "^3.8.0",
+    "@docusaurus/core": "^3.8.0",
+    "@docusaurus/module-type-aliases": "^3.8.0",
+    "@docusaurus/preset-classic": "^3.8.0",
+    "@docusaurus/tsconfig": "^3.8.0",
+    "@docusaurus/types": "^3.8.0",
     "@easyops-cn/docusaurus-search-local": "^0.49.2",
     "@htmllinter/basic-config": "^0.5.1",
     "@mdx-js/react": "^3.0.0",
@@ -229,12 +232,7 @@
     "webpackbar": "^7.0.0",
     "worker-loader": "^3.0.8"
   },
-  "devDependencies": {
-    "@docusaurus/module-type-aliases": "3.7.0",
-    "@docusaurus/tsconfig": "3.7.0",
-    "@docusaurus/types": "3.7.0",
-    "typescript": "~5.6.2"
-  },
+  "devDependencies": {},
   "browserslist": {
     "production": [
       ">0.5%",
